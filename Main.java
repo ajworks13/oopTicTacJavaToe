@@ -8,12 +8,36 @@ import java.util.*;
 
 		each square will be its own method. Once used, it can not be reused until the game is restarted.
 		Make sure the game can get into a draw state.
-		
+
+		close scanner leak later.
 		
 */
 
 class Main {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
-}
+		Scanner sc = new Scanner(System.in);
+		boolean gameOver = false;
+
+		GameBoard gameBoard = new GameBoard();
+		PlayerOne player1 = new PlayerOne();
+		PlayerTwo player2 = new PlayerTwo();
+		AI cpu = new AI();
+
+		do{
+			System.out.println("Want to play versus a friend or versus a computer friend?");
+			String choice = sc.nextLine();
+
+			if(choice.equals("friend")){
+				gameBoard.showBoard();
+				
+			}
+		}while(gameOver != true);
+
+		
+  }// main method
+
+
+
+
+	
+} // class main
