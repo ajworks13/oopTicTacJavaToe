@@ -14,9 +14,18 @@ public class GameBoard{
 
 	public static ArrayList<Integer> slotsLeft;
 
-	public void theBoardList(){
-		slotsLeft = new ArrayList();
+	// initial method to run just once to load all of the slots.
+	static{
+		slotsLeft = new ArrayList<>();
 		slotsLeft.add(1);
+		slotsLeft.add(2);
+		slotsLeft.add(3);
+		slotsLeft.add(4);
+		slotsLeft.add(5);
+		slotsLeft.add(6);
+		slotsLeft.add(7);
+		slotsLeft.add(8);
+		slotsLeft.add(9);
 	}
 	
 
