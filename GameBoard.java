@@ -12,26 +12,26 @@ public class GameBoard{
 	private String slot9 = " - ";
 	private boolean gameOver = false;
 
-	public static ArrayList<Integer> slotsLeft;
+	public static ArrayList<String> slotsLeft;
 
 	// initial method to run just once to load all of the slots.
 	static{
 		slotsLeft = new ArrayList<>();
-		slotsLeft.add(1);
-		slotsLeft.add(2);
-		slotsLeft.add(3);
-		slotsLeft.add(4);
-		slotsLeft.add(5);
-		slotsLeft.add(6);
-		slotsLeft.add(7);
-		slotsLeft.add(8);
-		slotsLeft.add(9);
+		slotsLeft.add("a1");
+		slotsLeft.add("a2");
+		slotsLeft.add("a3");
+		slotsLeft.add("b4");
+		slotsLeft.add("b5");
+		slotsLeft.add("b6");
+		slotsLeft.add("c7");
+		slotsLeft.add("c8");
+		slotsLeft.add("c9");
 	}
 	
 
 	public void howManySlotsLeft(){
 
-		for(int x : slotsLeft){
+		for(String x : slotsLeft){
 			System.out.print(x);
 		}
 		System.out.println();
@@ -52,7 +52,7 @@ public class GameBoard{
 		this.slot1 = theSlot1;
 		showBoard();
 		// slotsLeft.remove(new Integer(1)); could of been useful.
-		slotsLeft.remove(0); // problem is it removes the next element.
+		slotsLeft.remove("a1"); // problem is it removes the next element.
 		
 	}
 
