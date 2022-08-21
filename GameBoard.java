@@ -51,7 +51,8 @@ public class GameBoard{
 	public void insertSlot1(String theSlot1){
 		this.slot1 = theSlot1;
 		showBoard();
-		slotsLeft.remove(0);
+		// slotsLeft.remove(new Integer(1)); could of been useful.
+		slotsLeft.remove(0); // problem is it removes the next element.
 		
 	}
 
