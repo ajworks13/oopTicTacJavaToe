@@ -32,7 +32,7 @@ public class GameBoard{
 	public void howManySlotsLeft(){
 
 		for(String x : slotsLeft){
-			System.out.print(x);
+			System.out.print(x + " ");
 		}
 		System.out.println();
 	}
@@ -52,7 +52,8 @@ public class GameBoard{
 		this.slot1 = theSlot1;
 		showBoard();
 		// slotsLeft.remove(new Integer(1)); could of been useful.
-		slotsLeft.remove("a1"); // problem is it removes the next element.
+		slotsLeft.remove("a1"); 
+		
 		
 	}
 
