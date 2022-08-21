@@ -14,28 +14,56 @@ import java.util.*;
 */
 
 class Main {
+
+	// global
+	static boolean gameOver = false;
+	
   public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		boolean gameOver = false;
+		//boolean gameOver = false;
 
 		GameBoard gameBoard = new GameBoard();
 		PlayerOne player1 = new PlayerOne();
 		PlayerTwo player2 = new PlayerTwo();
 		AI cpu = new AI();
+		String choice = null;
 
 		do{
 			System.out.println("Want to play versus a friend or versus a computer friend?");
-			String choice = sc.nextLine();
+			choice = sc.nextLine();
 
-			if(choice.equals("friend")){
+			if(choice.equalsIgnoreCase("friend")){
 				gameBoard.showBoard();
-				
+				startTheGame();
+			}else if(choice.equalsIgnoreCase("computer")){
+				// something
+			}else{
+				System.out.println("Invalid choice..try again.");
 			}
-		}while(gameOver != true);
+			
+		}while(choice != "friend" || choice != "computer");
 
 		
   }// main method
 
+	public static void startTheGame(){
+		Scanner sc = new Scanner(System.in);
+		GameBoard gameBoard = new GameBoard();
+
+		
+		do{
+			gameBoard.showBoard();
+			System.out.println("Player 1! Go\nChoose between 1 - 9");
+			int p1Decision = sc.nextInt();
+
+			if(p1Decision == 1){
+				gameBoard.insertSlot1(" X ");
+			}
+
+			gameBoard.showBoard();
+				
+		}while(gameOver != true);
+	}
 
 
 
