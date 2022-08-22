@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GameBoard{
 	private String slot1 = " - ";
@@ -12,6 +13,7 @@ public class GameBoard{
 	private String slot9 = " - ";
 	private boolean gameOver = false;
 
+	// global array
 	public static ArrayList<String> slotsLeft;
 
 	// initial method to run just once to load all of the slots.
@@ -49,11 +51,29 @@ public class GameBoard{
 
 	// setter
 	public void insertSlot1(String theSlot1){
-		this.slot1 = theSlot1;
-		showBoard();
-		// slotsLeft.remove(new Integer(1)); could of been useful.
-		slotsLeft.remove("a1"); 
+		Scanner sc = new Scanner(System.in);
+		String mistake;
 		
+		if(slotsLeft.contains("a1")){
+			this.slot1 = theSlot1;
+			showBoard();
+			System.out.println("ITS IN HERE");
+			slotsLeft.remove("a1");
+		}else{
+			do{
+				System.out.println("Choose another number");
+				mistake = sc.nextLine();
+
+				if(mistake.equals("2")){
+					insertSlot2(mistake);
+				}
+				
+			}while(mistake == "1");
+		}
+		
+	}
+
+	public void insertSlot2(String theSlot2){
 		
 	}
 
