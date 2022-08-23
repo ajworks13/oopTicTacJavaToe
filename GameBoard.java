@@ -40,6 +40,7 @@ public class GameBoard{
 	}
 
 	public void showBoard(){
+		
 		System.out.println(slot1 + "|" + slot2 + "|" + slot3);
 		System.out.println("------------");
 		System.out.println(slot4 + "|" + slot5 + "|" + slot6);
@@ -49,7 +50,7 @@ public class GameBoard{
 
 	
 
-	// setter
+	// setter's
 	public void insertSlot1(String theSlot1){
 		Scanner sc = new Scanner(System.in);
 		String mistake;
@@ -61,19 +62,38 @@ public class GameBoard{
 			slotsLeft.remove("a1");
 		}else{
 			do{
-				System.out.println("Choose another number");
+				System.out.println("Choose another number: ");
 				mistake = sc.nextLine();
 
 				if(mistake.equals("2")){
-					insertSlot2(mistake);
+					insertSlot2(" O ");
+					showBoard();
 				}
-				
 			}while(mistake == "1");
 		}
 		
 	}
 
 	public void insertSlot2(String theSlot2){
+		Scanner sc = new Scanner(System.in);
+		String mistake;
+
+		if(slotsLeft.contains("a2")){
+			this.slot2 = theSlot2;
+			showBoard();
+			System.out.println("ITS IN HERE");
+			slotsLeft.remove("a2");
+		}else{
+			do{
+				System.out.println("Choose another number: ");
+				mistake = sc.nextLine();
+
+				if(mistake.equals("1")){
+					insertSlot1(mistake);
+					showBoard();
+				}
+			}while(mistake == "2");
+		}
 		
 	}
 
