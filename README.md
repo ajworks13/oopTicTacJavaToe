@@ -8,3 +8,4 @@ Gotta give them an error check.
 Gotta somehow make showBoard not refresh all the time.
 Maybe use a recursive method to handle the gameboard!
 9/4/22 - Found out that showBoard is not updating and is just printing as a new print without a previous change.
+    Can not update showBoard at all when calling it from the main class. And when calling it from the gameboard class, it updates 1 time each time but without the previous result.
